@@ -18,31 +18,11 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            animation: background-fade 10s infinite alternate;
         }
-
-        @keyframes background-fade {
-            from {
-                filter: brightness(0.8);
-            }
-            to {
-                filter: brightness(1.2);
-            }
-        }
-
+        
         h1 {
             font-size: 48px;
-            text-shadow: 2px 2px 10px black;
-            animation: blink 1.5s infinite alternate;
-        }
-
-        @keyframes blink {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0.7;
-            }
+            text-shadow: 2px 2px 5px black;
         }
 
         button {
@@ -54,18 +34,15 @@
             cursor: pointer;
             font-size: 20px;
             transition: 0.3s;
-            box-shadow: 0 0 15px red;
         }
 
         button:hover {
             background: darkred;
-            box-shadow: 0 0 25px darkred;
         }
 
-        .lyrics p {
-            opacity: 0;
-            font-size: 20px;
-            transition: opacity 2s ease-in;
+        .lyrics {
+            margin-top: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -74,10 +51,12 @@
     <h1>Gül İsmihan Kurt</h1>
     <button onclick="playAudio()">Oynat</button>
     <div class="lyrics">
-        <p id="line1">Yüreğimden damla damla dökülen</p>
-        <p id="line2">Bütün sevgimden bir avuç kalmış</p>
-        <p id="line3">Umut diye sardığım yarınlardan</p>
-        <p id="line4">Ne yazık ki birkaç gün kalmış</p>
+        <p>
+            Yüreğimden damla damla dökülen <br>
+            Bütün sevgimden bir avuç kalmış <br>
+            Umut diye sardığım yarınlardan <br>
+            Ne yazık ki birkaç gün kalmış
+        </p>
     </div>
 </div>
 <audio id="song" src="turk.mp3"></audio>
@@ -86,22 +65,6 @@
     function playAudio() {
         const audio = document.getElementById("song");
         audio.play();
-
-        setTimeout(() => {
-            document.getElementById("line1").style.opacity = 1;
-        }, 2000);
-
-        setTimeout(() => {
-            document.getElementById("line2").style.opacity = 1;
-        }, 6000);
-
-        setTimeout(() => {
-            document.getElementById("line3").style.opacity = 1;
-        }, 10000);
-
-        setTimeout(() => {
-            document.getElementById("line4").style.opacity = 1;
-        }, 14000);
     }
 </script>
 </body>
